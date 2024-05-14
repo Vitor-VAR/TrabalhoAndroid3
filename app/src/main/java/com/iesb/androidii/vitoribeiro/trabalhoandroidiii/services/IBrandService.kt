@@ -1,6 +1,7 @@
-package com.iesb.androidii.vitoribeiro.trabalhoandroidiii
+package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services
 
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model.Brand
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
