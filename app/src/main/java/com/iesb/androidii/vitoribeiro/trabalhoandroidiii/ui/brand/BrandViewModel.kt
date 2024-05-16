@@ -1,5 +1,7 @@
 package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.ui.brand
 
+import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model.Brand
@@ -13,17 +15,24 @@ import retrofit2.Response
 class BrandViewModel: ViewModel() {
     private var brandLiveDate = MutableLiveData<List<BrandItem>>()
 
-    fun getBrand(){
+    fun getBrands(){
         RetrofitClient.createService(IBrandService::class.java).getBrands("")
             .enqueue(object: Callback<Brand>{
                 override fun onResponse(call: Call<Brand>, response: Response<Brand>) {
-                    TODO("Not yet implemented")
+                    if(response.isSuccessful){
+                        brandLiveDate.value = response.body()!!.brands
+                    }
+
                 }
 
                 override fun onFailure(call: Call<Brand>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    Log.d("BradViewModel", t.message.toString())
                 }
 
             })
+    }
+
+    fun  observeBrandLiveData(): LiveData<List<BrandItem>>{
+        return brandLiveDate
     }
 }

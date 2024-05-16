@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitClient {
     companion object {
         private lateinit var INSTANCE: Retrofit
-        private const val BASE_URL = ""
+        private const val BASE_URL = "https://parallelum.com.br/fipe/api/v1/"
 
         private fun getRetrofitInstance(): Retrofit {
             var http = OkHttpClient.Builder()

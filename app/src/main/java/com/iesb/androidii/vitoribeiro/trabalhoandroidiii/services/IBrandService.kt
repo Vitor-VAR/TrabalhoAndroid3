@@ -6,6 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface IBrandService {
-    @GET("marcas?")
+    @GET("carros/marcas?")
     fun getBrands(@Query("api_key")apiKey: String): Call<Brand>
 }

@@ -1,3 +1,13 @@
 package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model
 
-class Brand : ArrayList<BrandItem>()
+class Brand(){
+   val brands: List <BrandItem>
+       get() {
+           TODO()
+       }
+
+}
+
+
+
+
