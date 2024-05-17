@@ -1,5 +1,6 @@
 package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.ui.login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.R
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.databinding.ActivityLoginBinding
+import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.ui.brand.BrandListActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,7 +38,8 @@ class LoginActivity : AppCompatActivity() {
     private fun setObserver(){
         viewModel.login().observe(this, Observer {
             if (it){
-                Toast.makeText(this, "Sucesso!", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, BrandListActivity::class.java)
+                startActivity(intent)
             }else{
                 Toast.makeText(this, "Falha!", Toast.LENGTH_LONG).show()
             }
