@@ -16,7 +16,7 @@ class BrandViewModel: ViewModel() {
     private var brandLiveDate = MutableLiveData<List<BrandItem>>()
 
     fun getBrand(){
-        RetrofitClient.createService(IBrandService::class.java).getBrands("")
+        RetrofitClient.getService(IBrandService::class.java).getBrands("")
             .enqueue(object: Callback<Brand>{
                 override fun onResponse(call: Call<Brand>, response: Response<Brand>) {
                     if (response.isSuccessful){

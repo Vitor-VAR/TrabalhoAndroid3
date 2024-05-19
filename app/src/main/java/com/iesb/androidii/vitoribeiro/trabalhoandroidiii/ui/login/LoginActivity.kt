@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get(LoginViewModel :: class.java)
 
-        setObserver()
+        //setObserver()
 
         binding.btLogin.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
@@ -35,14 +35,14 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun setObserver(){
-        viewModel.login().observe(this, Observer {
-            if (it){
-                val intent = Intent(this, BrandListActivity::class.java)
-                startActivity(intent)
-            }else{
-                Toast.makeText(this, "Falha!", Toast.LENGTH_LONG).show()
-            }
-        })
-    }
+//    private fun setObserver(){
+//        viewModel.login().observe(this, Observer {
+//            if (it){
+//                val intent = Intent(this, BrandListActivity::class.java)
+//                startActivity(intent)
+//            }else{
+//                Toast.makeText(this, "Falha!", Toast.LENGTH_LONG).show()
+//            }
+//        })
+//    }
 }
