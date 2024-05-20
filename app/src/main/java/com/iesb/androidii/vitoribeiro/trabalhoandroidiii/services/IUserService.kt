@@ -8,14 +8,14 @@ import retrofit2.http.POST
 
 interface IUserService {
 
-    @POST("Autentication/Login")
+    @POST("Authentication/Login")
     @FormUrlEncoded
     fun login(
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<UserModel>
 
-    @POST("Autentication/Create")
+    @POST("Authentication/Create")
     @FormUrlEncoded
     fun create(
         @Field("name") name: String,

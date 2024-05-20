@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">TrabalhoAndroidIII</string>
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -9,4 +10,28 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="ERROR_UNEXPECTED">Um erro inesperado ocorreu. Tente novamente mais tarde.</string>
+    <string name="ERROR_LOAD_TASK">Erro ao carregar a tarefa.</string>
+    <string name="ERROR_INTERNET_CONNECTION">Conexão à internet necessária para uso da applicação.</string>
+
+
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="login">Login</string>
+    <string name="nome">Nome</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="descricao">Descrição</string>
+    <string name="prioridade">Prioridade</string>
+    <string name="data_limite">Data Limite</string>
+    <string name="update_task">Atualizar tarefa</string>
+    <string name="clique_para_selecionar_a_data">Clique para selecionar a data limite</string>
+    <string name="sim">Sim</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="nao_tem_uma_conta">Não tem uma conta?</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="entrar">Entrar</string>
+    <string name="sair">Sair</string>
+    <string name="proximos_7_dias">Próximos 7 dias</string>
+
 </resources>
