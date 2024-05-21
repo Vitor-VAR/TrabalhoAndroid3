@@ -45,10 +45,15 @@ class LoginActivity : AppCompatActivity() {
 
     private fun observe(){
         viewModel.login.observe(this) {
-            startActivity(Intent(applicationContext, MainActivity::class.java))
+            if(it.status()){
+                startActivity(Intent(applicationContext, BrandListActivity::class.java))
+                finish()
+            }else {
+                Toast.makeText(applicationContext, it.message(), Toast.LENGTH_LONG).show()
+
+            }
+
         }
-        viewModel.failure.observe(this) {
-            Toast.makeText(applicationContext, it, Toast.LENGTH_LONG).show()
+
         }
-    }
 }

@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.databinding.BrandItemBinding
-import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model.BrandItem
+import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model.BrandModel
 
 class BrandAdapter: RecyclerView.Adapter<BrandAdapter.ViewHolder>() {
-    private var brandList = ArrayList<BrandItem>()
+    private var brandList = ArrayList<BrandModel>()
 
-    fun setBrandList(brandList: List<BrandItem>) {
-        this.brandList = brandList as ArrayList<BrandItem>
+    fun setBrandList(brandList: List<BrandModel>) {
+        this.brandList = brandList as ArrayList<BrandModel>
         notifyDataSetChanged()
     }
 
