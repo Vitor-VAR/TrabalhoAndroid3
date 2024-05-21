@@ -15,7 +15,6 @@ class BrandAdapter: RecyclerView.Adapter<BrandAdapter.ViewHolder>() {
     }
 
     class ViewHolder(val binding: BrandItemBinding): RecyclerView.ViewHolder(binding.root){
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,5 +28,6 @@ class BrandAdapter: RecyclerView.Adapter<BrandAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val brand = getItemId(position)
+        //holder.binding(getItemId(position))
     }
 }

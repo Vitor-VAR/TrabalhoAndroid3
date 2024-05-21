@@ -20,7 +20,7 @@ class BrandListActivity : AppCompatActivity() {
 
         prepareRecycleView()
         viewModel = ViewModelProvider(this)[BrandViewModel::class.java]
-        viewModel.getBrand()
+        //viewModel.getBrand()
         viewModel.observerBrandLiveData()
     }
 

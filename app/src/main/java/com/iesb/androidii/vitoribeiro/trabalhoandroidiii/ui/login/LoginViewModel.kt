@@ -26,7 +26,6 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 //    }
 
     //Faz login usando API
-
     fun doLogin(email: String, password: String) {
         userRepository.login(email, password, object : APIListener<UserModel> {
             override fun onSuccess(result: UserModel) {

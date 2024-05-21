@@ -11,6 +11,7 @@ import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.R
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.databinding.ActivityLoginBinding
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model.UserModel
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.ui.brand.BrandListActivity
+import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.ui.register.UserRegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -39,6 +40,12 @@ class LoginActivity : AppCompatActivity() {
 
             observe()
         }
+
+        binding.tvNewUser.setOnClickListener {
+
+            startActivity(Intent(this, UserRegisterActivity::class.java))
+        }
+
     }
 
 
