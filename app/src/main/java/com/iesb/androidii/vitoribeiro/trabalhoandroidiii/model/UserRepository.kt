@@ -16,9 +16,36 @@ class UserRepository(val context: Context) {
     private val remote = RetrofitClient.getService(IUserService::class.java)
 
     fun login(email: String, password: String, listener: APIListener<UserModel>) {
+
         val call = remote.login(email, password)
+
         call.enqueue(object : Callback<UserModel>{
+
             override fun onResponse(call: Call<UserModel>, response: Response<UserModel>) {
+                if(response.code() == ProcedureConstants.HTTP.SUCCESS){
+                    response.body()?.let { listener.onSuccess(it) }
+                } else{
+                    listener.onFailure(failResponse(response.errorBody()!!.string()))
+                }
+            }
+
+            override fun onFailure(call: Call<UserModel>, t: Throwable) {
+
+                listener.onFailure(context.getString(R.string.ERROR_UNEXPECTED))
+            }
+
+        })
+
+    }
+
+    fun create(name: String, email: String, password: String, listener: APIListener<UserModel>) {
+
+        val call = remote.create(name, email, password)
+
+        call.enqueue(object : Callback<UserModel>{
+
+            override fun onResponse(call: Call<UserModel>, response: Response<UserModel>) {
+
                 if(response.code() == ProcedureConstants.HTTP.SUCCESS){
                     response.body()?.let { listener.onSuccess(it) }
                 } else{

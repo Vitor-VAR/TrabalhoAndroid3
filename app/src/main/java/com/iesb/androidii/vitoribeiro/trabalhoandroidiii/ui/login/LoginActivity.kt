@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ////Variáveis da classe
+        //Variáveis da classe
         binding = ActivityLoginBinding.inflate(layoutInflater)
         //Layout
         setContentView(binding.root)
@@ -31,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.btLogin.setOnClickListener {
+
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 

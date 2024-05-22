@@ -18,6 +18,8 @@ class BrandListActivity : AppCompatActivity() {
         binding = ActivityBrandListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.radioCar
+
         prepareRecycleView()
         viewModel = ViewModelProvider(this)[BrandViewModel::class.java]
         //viewModel.getBrand()
