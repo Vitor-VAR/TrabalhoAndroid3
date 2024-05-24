@@ -3,15 +3,12 @@ package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
-import retrofit2.http.Url
 
-class RetrofitClient {
+class RetrofitClientBrand {
 
-    //
     companion object {
         private lateinit var INSTANCE: Retrofit
-        private const val BASE_URL = "http://devmasterteam.com/CursoAndroidAPI/"
+        private const val BASE_URL = "https://parallelum.com.br/fipe/api/v1"
 
 
         private fun getRetrofitInstance(): Retrofit {
@@ -30,10 +27,5 @@ class RetrofitClient {
         fun <T> getService(service: Class<T>): T{
             return getRetrofitInstance().create(service)
         }
-
-//        fun getUserService(): IUserService{
-//            return getRetrofitInstance().create(IUserService::class.java)
-//        }
-    }
-
+}
 }

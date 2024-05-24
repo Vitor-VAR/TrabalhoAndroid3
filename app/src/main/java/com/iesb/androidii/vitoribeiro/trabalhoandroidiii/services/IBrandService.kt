@@ -17,6 +17,6 @@ interface IBrandService {
     @GET("motos/marcas")
     fun listMotorcycle(): Call<List<BrandModel>>
 
-//    @GET("{string}/marcas?")
-//    fun getBrands(@Path(value = "string", encoded = true)string: String): Call<List<BrandModel>>
+    @GET("{string}/marcas?")
+    fun listBrandCar(@Path(value = "string", encoded = true)string: String): Call<List<BrandModel>>
 }

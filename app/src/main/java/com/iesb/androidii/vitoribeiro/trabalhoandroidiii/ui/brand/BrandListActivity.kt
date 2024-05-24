@@ -2,10 +2,9 @@ package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.ui.brand
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.GridLayout
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
-import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.R
+import androidx.lifecycle.viewModelScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.databinding.ActivityBrandListBinding
 
 class BrandListActivity : AppCompatActivity() {
@@ -18,20 +17,25 @@ class BrandListActivity : AppCompatActivity() {
         binding = ActivityBrandListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.radioCar
+        viewModel = ViewModelProvider(this)[BrandViewModel::class.java]
+
+
+        binding.btCar.setOnClickListener {
+            val btCar = binding.btCar.text.toString()
+
+            viewModel.listBrandCar(btCar)
+
+        }
 
         prepareRecycleView()
-        viewModel = ViewModelProvider(this)[BrandViewModel::class.java]
-        //viewModel.getBrand()
-        viewModel.observerBrandLiveData()
+
     }
 
     fun prepareRecycleView(){
         brandAdapter = BrandAdapter()
         binding.recyclerView.apply {
-            layoutManager = GridLayoutManager(applicationContext, 2)
+            layoutManager = LinearLayoutManager(context)
             adapter = brandAdapter
-
         }
 
 

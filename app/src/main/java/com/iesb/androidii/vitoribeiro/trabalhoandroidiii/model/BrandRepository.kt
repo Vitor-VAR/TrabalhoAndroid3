@@ -1,15 +1,17 @@
 package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model
 
+import android.content.Context
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.IBrandService
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.RetrofitClient
+import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.RetrofitClientBrand
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.listener.APIListener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class BrandRepository {
+class BrandRepository (val context: Context) {
 
-    private val remote = RetrofitClient.getService(IBrandService::class.java)
+    private val remote = RetrofitClientBrand.getService(IBrandService::class.java)
 
     fun listCar(listener: APIListener<List<BrandModel>>){
         val call = remote.listCar()
@@ -26,7 +28,7 @@ class BrandRepository {
         list(call, listener)
     }
 
-   private fun list(call: Call<List<BrandModel>>, listener: APIListener<List<BrandModel>>){
+    private fun list(call: Call<List<BrandModel>>, listener: APIListener<List<BrandModel>>){
         call.enqueue(object : Callback<List<BrandModel>>{
             override fun onResponse(
                 call: Call<List<BrandModel>>,
@@ -34,7 +36,6 @@ class BrandRepository {
             ) {
 
             }
-
             override fun onFailure(call: Call<List<BrandModel>>, t: Throwable) {
                 listener.onFailure("Um erro inesperado ocorreu. Tente novamente mais tarde.")
             }

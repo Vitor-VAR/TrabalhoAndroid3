@@ -8,49 +8,43 @@
     android:padding="16dp"
     tools:context=".ui.brand.BrandListActivity">
 
-    <LinearLayout
-        android:id="@+id/layout2"
-        android:layout_width="match_parent"
-        android:layout_height="134dp"
-        android:orientation="horizontal">
+
 
         <TextView
             android:id="@+id/tvListVehicle"
-            android:layout_width="98dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:layout_weight="4"
             android:padding="16dp"
             android:text="Marcas de Veículos"
+            android:textStyle="bold"
             android:textSize="18dp" />
 
-        <RadioGroup
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btCar"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:hint="carros"
+            android:text="Carros" />
 
-            <RadioButton
-                android:id="@+id/radio_car"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Carros" />
+        <Button
+            android:id="@+id/btMotocycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caminhões" />
 
-            <RadioButton
-                android:id="@+id/radio_motocycle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Caminhões" />
+        <Button
+            android:id="@+id/btTruck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motos" />
 
-            <RadioButton
-                android:id="@+id/radio_truck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motos" />
-
-        </RadioGroup>
-
-
-    </LinearLayout>
+    </GridLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
