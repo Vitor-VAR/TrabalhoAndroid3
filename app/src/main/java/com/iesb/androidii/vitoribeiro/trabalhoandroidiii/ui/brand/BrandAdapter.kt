@@ -9,6 +9,7 @@ import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model.BrandModel
 class BrandAdapter: RecyclerView.Adapter<BrandAdapter.ViewHolder>() {
     private var brandList = ArrayList<BrandModel>()
 
+
     fun setBrandList(brandList: List<BrandModel>) {
         this.brandList = brandList as ArrayList<BrandModel>
         notifyDataSetChanged()

@@ -1,21 +1,36 @@
 package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.ui.brand
 
-import android.util.Log
+
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model.BrandModel
-import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.IBrandService
-import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
-class BrandViewModel: ViewModel() {
-    private var brandLiveDate = MutableLiveData<List<BrandModel>>()
+import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model.BrandRepository
+import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.listener.APIListener
 
 
-    fun observerBrandLiveData(): LiveData<List<BrandModel>> {
-        return brandLiveDate
+class BrandViewModel (application: Application): AndroidViewModel(application) {
+    private val brandRepository = BrandRepository(application.applicationContext)
+
+    private val _brands = MutableLiveData<List<BrandModel>>()
+    val brands: LiveData<List<BrandModel>> = _brands
+
+
+    fun list(){
+        brandRepository.listCar(object : APIListener<List<BrandModel>>{
+            override fun onSuccess(result: List<BrandModel>) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onFailure(message: String) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
     }
+
 }
+
+

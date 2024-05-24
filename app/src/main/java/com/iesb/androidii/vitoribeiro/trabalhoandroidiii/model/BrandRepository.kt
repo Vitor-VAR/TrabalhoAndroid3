@@ -1,13 +1,15 @@
 package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.model
 
+import android.content.Context
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.IBrandService
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.RetrofitClient
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.listener.APIListener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.security.AccessControlContext
 
-class BrandRepository {
+class BrandRepository (val context: Context) {
 
     private val remote = RetrofitClient.getService(IBrandService::class.java)
 
@@ -32,6 +34,7 @@ class BrandRepository {
                 call: Call<List<BrandModel>>,
                 response: Response<List<BrandModel>>
             ) {
+
 
             }
 
