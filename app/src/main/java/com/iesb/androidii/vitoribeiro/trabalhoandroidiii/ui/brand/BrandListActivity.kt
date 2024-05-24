@@ -3,7 +3,6 @@ package com.iesb.androidii.vitoribeiro.trabalhoandroidiii.ui.brand
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.databinding.ActivityBrandListBinding
 

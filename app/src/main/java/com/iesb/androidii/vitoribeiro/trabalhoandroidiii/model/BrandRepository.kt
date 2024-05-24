@@ -8,6 +8,7 @@ import com.iesb.androidii.vitoribeiro.trabalhoandroidiii.services.listener.APILi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.security.AccessControlContext
 
 class BrandRepository (val context: Context) {
 
@@ -34,6 +35,7 @@ class BrandRepository (val context: Context) {
                 call: Call<List<BrandModel>>,
                 response: Response<List<BrandModel>>
             ) {
+
 
             }
             override fun onFailure(call: Call<List<BrandModel>>, t: Throwable) {
